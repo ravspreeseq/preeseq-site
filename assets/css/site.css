@@ -172,3 +172,27 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; letter-sp
 .site-footer .meta { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .site-footer a { color: var(--slate); }
 .site-footer .tagline { font-family: var(--display); font-style: italic; width: 100%; margin: 0; }
+
+/* Contact form */
+.big-link { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 40px); }
+.contact-form { display: grid; gap: 22px; }
+.field-row { display: grid; gap: 22px; }
+@media (min-width: 700px) { .field-row { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: 8px; }
+.field span { font-size: 16px; color: var(--slate); }
+.field input, .field textarea {
+  font: inherit; font-size: 18px; color: var(--navy); background: var(--white);
+  border: 1px solid var(--stone); border-radius: 0; padding: 13px 14px; width: 100%;
+}
+.field textarea { resize: vertical; min-height: 150px; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 1px var(--navy); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-note { color: var(--slate); font-size: 15px; margin: -6px 0 0; }
+.send { justify-self: start; font: inherit; font-weight: 700; font-size: 18px; color: var(--white); background: var(--terracotta); border: 0; border-radius: 0; padding: 14px 30px; cursor: pointer; }
+.send:hover { background: #9c4a32; }
+.send:disabled { opacity: 0.6; cursor: wait; }
+.form-status { margin: 0; font-size: 17px; min-height: 1.5em; }
+.form-status.ok { color: var(--navy); font-weight: 700; }
+.form-status.error { color: var(--terracotta); }
+
+html { scroll-padding-top: 90px; }

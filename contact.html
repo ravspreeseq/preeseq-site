@@ -27,13 +27,39 @@
   </div>
 </header>
 <main>
-<section class="hero" style="padding:140px 0 150px">
+<section class="hero" style="padding-bottom:56px">
   <div class="wrap">
-    <h1 class="display" style="margin-bottom:34px">Write to us.</h1>
-    <a class="big-email" href="mailto:ravi@preeseq.com">ravi@preeseq.com</a>
-    <div class="contact-meta"><a class="more" href="https://www.linkedin.com/in/guptaravi/" rel="noopener">LinkedIn</a><span>Bengaluru, India</span></div>
+    <h1 class="display">Write to us.</h1>
+    <p class="sub" style="margin-bottom:0">Tell us briefly what you would like to discuss.</p>
   </div>
 </section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap narrow">
+    <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="7f6ffba4-67eb-4d51-a567-48d332d1ce09">
+      <input type="hidden" name="subject" value="New enquiry from preeseq.com">
+      <input type="hidden" name="from_name" value="preeseq.com">
+      <input type="hidden" name="redirect" value="https://preeseq.com/thanks.html">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <label class="field"><span>Company</span><input type="text" name="company" autocomplete="organization"></label>
+      <label class="field"><span>What would you like to discuss?</span><textarea name="message" rows="6" required></textarea></label>
+      <p class="form-note">We use these details only to reply to you.</p>
+      <button class="send" type="submit">Send message</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+    <div class="contact-meta" style="justify-content:flex-start;margin-top:48px">
+      <span>Or email <a href="mailto:ravi@preeseq.com">ravi@preeseq.com</a></span>
+      <a class="more" href="https://www.linkedin.com/in/guptaravi/" rel="noopener">LinkedIn</a>
+      <span>Bengaluru, India</span>
+    </div>
+  </div>
+</section>
+<script src="/assets/js/contact.js" defer></script>
 </main>
 <footer class="site-footer">
   <div class="wrap">
