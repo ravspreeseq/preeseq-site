@@ -190,3 +190,50 @@ p { margin: 0 0 16px; }
 .site-footer .tagline { font-family: var(--display); font-style: italic; color: var(--stone); width: 100%; margin: 4px 0 0; }
 
 @media (max-width: 899px) { .bio figure img { max-width: 340px; } }
+
+/* Services - clickable levers */
+.hint { color: var(--slate); font-size: 16px; margin-bottom: 20px; }
+.tabs { display: grid; grid-template-columns: 1fr; border-top: 0.5px solid var(--stone); }
+.tab {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+  width: 100%; text-align: left; background: var(--white); color: var(--navy);
+  border: 0; border-bottom: 0.5px solid var(--stone); padding: 20px 16px; cursor: pointer;
+  font: inherit;
+}
+.tab .num {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--sand); color: var(--navy);
+  font-weight: 700; font-size: 14px; display: grid; place-items: center;
+}
+.tab .t { display: flex; flex-direction: column; gap: 2px; }
+.tab .title { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.2; }
+.tab .sum { color: var(--slate); font-size: 16px; line-height: 1.35; }
+.tab .chev { width: 10px; height: 10px; border-right: 2px solid var(--slate); border-bottom: 2px solid var(--slate); transform: rotate(45deg); margin-right: 4px; transition: transform .15s; }
+.tab[aria-expanded="true"] .chev { transform: rotate(225deg); }
+.tab:hover { background: var(--sand); }
+.tab[aria-expanded="true"] { background: var(--navy); color: var(--white); }
+.tab[aria-expanded="true"] .sum { color: var(--stone); }
+.tab[aria-expanded="true"] .num { background: var(--terracotta); color: var(--white); }
+.tab[aria-expanded="true"] .chev { border-color: var(--white); }
+
+.panel { padding: 28px 16px 40px; border-bottom: 0.5px solid var(--stone); }
+.panel > .num, .panel > h2 { display: none; }
+.panel .line { font-family: var(--display); font-size: 21px; margin-bottom: 18px; }
+.panel ul { margin: 0 0 24px; padding: 0; list-style: none; }
+.panel li { position: relative; padding: 10px 0 10px 22px; border-bottom: 0.5px solid var(--stone); }
+.panel li:last-child { border-bottom: 0; }
+.panel li::before { content: ""; position: absolute; left: 0; top: 20px; width: 8px; height: 8px; background: var(--navy); }
+
+@media (min-width: 900px) {
+  .tabs { grid-template-columns: 5fr 7fr; column-gap: 56px; border-top: 0; }
+  .tab { grid-column: 1; border-left: 0.5px solid var(--stone); border-right: 0.5px solid var(--stone); }
+  .tab:first-of-type { border-top: 0.5px solid var(--stone); }
+  .tab .chev { transform: rotate(-45deg); }
+  .tab[aria-expanded="true"] .chev { transform: rotate(-45deg); }
+  .panel { grid-column: 2; grid-row: 1 / span 5; align-self: start; padding: 0; border-bottom: 0; }
+  .panel > .num { display: block; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: var(--terracotta); margin-bottom: 8px; }
+  .panel > h2 { display: block; font-size: clamp(28px, 3.4vw, 36px); margin-bottom: 14px; }
+}
+.lever h3 a { color: inherit; text-decoration: none; }
+.lever h3 a::after { content: ""; position: absolute; inset: 0; }
+.lever { position: relative; }
+.lever:hover { border-color: var(--navy); }
