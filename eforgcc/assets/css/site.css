@@ -306,3 +306,5 @@ section[id]{scroll-margin-top:104px}
 .mblock .h3{margin-bottom:16px}
 .panelwrap .card{background:var(--paper)}
 .panelwrap .tint-bg .card{background:#fff}
+.band:not(.paper):not(.wash):not(.dark) .card{background:var(--paper)}
+.steps span small{font-size:14px;line-height:1.35}
